@@ -77,7 +77,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
 builder.Services.AddAuthorization();
 var app = builder.Build();
-
+app.UseDeveloperExceptionPage(); // להוסיף בתחילת ה-Middleware
 
 
 // if (app.Environment.IsDevelopment())
