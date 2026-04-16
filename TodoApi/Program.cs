@@ -55,10 +55,8 @@ builder.Services.AddCors(options =>
 });
 
 var connectionString = builder.Configuration.GetConnectionString("ToDoDB");
-// builder.Services.AddDbContext<ToDoDbContext>(options =>
-//     options.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 36))));;
 builder.Services.AddDbContext<ToDoDbContext>(options =>
-    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+    options.UseMySql(connectionString, Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.0-mysql")));
 
 // הגדרת השירות של ה-JWT
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
