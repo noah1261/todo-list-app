@@ -97,7 +97,7 @@ app.MapGet("/", () => "ToDo API is Running!");
 app.MapGet("/items",async(ToDoDbContext db)=>
      await db.Items.ToListAsync())
      .RequireAuthorization();;
-app.MapGet("/", () => "my server is running!");
+
 
 //הוספת פריט
 app.MapPost("/items", async (ToDoDbContext db, Item item) =>
