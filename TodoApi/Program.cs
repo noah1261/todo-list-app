@@ -86,9 +86,7 @@ var app = builder.Build();
     app.UseSwaggerUI(); // מייצר את הממשק הגרפי (האתר)
 // }
 
-// app.UseCors("AllowAll");
-
-
+app.UseCors("AllowAll");
 app.UseAuthentication(); // חייב לבוא לפני Authorization
 app.UseAuthorization();
 
