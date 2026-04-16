@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // 1. יצירת Instance ספציפי ל-API שלנו
 const apiClient = axios.create({
-  baseURL: "http://localhost:5016"
+ baseURL: process.env.REACT_APP_API_URL || "http://localhost:5016"
 });
 
 apiClient.interceptors.request.use(
